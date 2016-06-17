@@ -125,9 +125,11 @@ class DummyStateMachine(StateMachineWS):
                             self.language,
                             self.node.line,
                             self.reporter)
+        # add decode from utf-8
+        content = content.decode('utf-8')
         vec, msg = role_fn(name,
-                           rawtext=content.encode('utf-8'),
-                           text=content.encode('utf-8'),
+                           rawtext=content,
+                           text=content,
                            lineno=self.node.line,
                            inliner=self.memo.inliner,
                            options=options,
