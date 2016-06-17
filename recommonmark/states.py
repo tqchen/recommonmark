@@ -126,8 +126,8 @@ class DummyStateMachine(StateMachineWS):
                             self.node.line,
                             self.reporter)
         vec, msg = role_fn(name,
-                           rawtext=str(content),
-                           text=str(content),
+                           rawtext=content.encode('utf-8'),
+                           text=content.encode('utf-8'),
                            lineno=self.node.line,
                            inliner=self.memo.inliner,
                            options=options,
